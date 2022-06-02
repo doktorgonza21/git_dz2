@@ -1,0 +1,126 @@
+GitHub. HW_2
+1. На локальном репозитории сделать ветки для:
+
+- Postman
+- Jmeter
+- CheckLists
+- Bag Reports
+- SQL
+- Charles
+- Mobile testing
+
+Command: git branch branchname
+
+result: git branch
+  		Bug_Reports
+  		Charles
+  		CheckLists
+  		Jmeter
+  		Mobile_testing
+  		Postman
+  		SQL
+		* main
+
+2. Запушить все ветки на внешний репозиторий
+
+comand: giu push --all
+
+result: git push --all
+		Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+		To https://github.com/doktorgonza21/git2.git
+ 		* [new branch]      Bug_Reports -> Bug_Reports
+ 		* [new branch]      Charles -> Charles
+ 		* [new branch]      CheckLists -> CheckLists
+ 		* [new branch]      Jmeter -> Jmeter
+ 		* [new branch]      Mobile_testing -> Mobile_testing
+ 		* [new branch]      Postman -> Postman
+ 		* [new branch]      SQL -> SQL
+
+3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
+
+command: git checkout bug_reports; touch br1.txt | nano br1.txt
+
+result: switched to bug_reports branch, created br1.txt and added bug rep structure.
+
+4. Запушить структуру багрепорта на внешний репозиторий
+
+command: git add br1.txt; git commit -m "Add br1.txt to bug_reports branch";
+git push -u origin bug_reports
+
+result: Enumerating objects: 4, done.
+	Counting objects: 100% (4/4), done.
+	Delta compression using up to 8 threads
+	Compressing objects: 100% (3/3), done.
+	Writing objects: 100% (3/3), 376 bytes | 376.00 KiB/s, done.
+	Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+	remote:
+	remote: Create a pull request for 'bug_reports' on GitHub by visiting:
+	remote:      https://github.com/doktorgonza21/git2/pull/new/bug_reports
+	remote:
+	To https://github.com/doktorgonza21/git2.git
+	* [new branch]      bug_reports -> bug_reports
+	branch 'bug_reports' set up to track 'origin/bug_reports'.
+
+
+5. Вмержить ветку Bag Reports в Main
+
+command: git checkout main; git merge bug_reports
+
+result: Updating 4c87b7e..4f0aae1
+	Fast-forward
+ 	br1.txt | 17 +++++++++++++++++
+ 	1 file changed, 17 insertions(+)
+ 	create mode 100644 br1.txt
+
+
+6. Запушить main на внешний репозиторий.
+
+command: git push
+
+result: Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+	To https://github.com/doktorgonza21/git2.git
+   	4c87b7e..4f0aae1  main -> main
+
+
+7. В ветке CheckLists набросать структуру чек листа.
+
+command: git checkout CheckLists; touch cl1.txt | nano cl1.txt
+
+result: switched to CheckLists branch and created cl1.txt with content
+
+8. Запушить структуру на внешний репозиторий
+
+command: git add cl1.txt; git commit -m "Add cl1.txt to CheckLists branch";
+git push -u origin CheckLists
+
+result: Enumerating objects: 4, done.
+	Counting objects: 100% (4/4), done.
+	Delta compression using up to 8 threads
+	Compressing objects: 100% (2/2), done.
+	Writing objects: 100% (3/3), 331 bytes | 331.00 KiB/s, done.
+	Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+	To https://github.com/doktorgonza21/git2.git
+   	4c87b7e..e4ba806  CheckLists -> CheckLists
+	branch 'CheckLists' set up to track 'origin/CheckLists'.
+
+
+9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
+
+command: go to "Pull requests", click "New pull request", chose "base:main" and "compare:CheckLists", click "Create pull request", add comment and click "Create pull request", then in "Pull requests" click "Merge pull request" and click "Confirm merge"
+
+result: cl1.txt added to main branch
+
+10. Синхронизировать Внешнюю и Локальную ветки Main
+
+command: git fetch; git pull
+
+result: remote: Enumerating objects: 7, done.
+	remote: Counting objects: 100% (7/7), done.
+	remote: Compressing objects: 100% (4/4), done.
+	remote: Total 4 (delta 0), reused 0 (delta 0), pack-reused 0
+	Unpacking objects: 100% (4/4), 1.42 KiB | 72.00 KiB/s, done.
+	From https://github.com/doktorgonza21/git2
+ 	* [new branch]      Bug_Reports -> origin/Bug_Reports
+   	4f0aae1..e24ba87  main        -> origin/main
+
+end
