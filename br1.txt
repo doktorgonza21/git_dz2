@@ -1,0 +1,17 @@
+BugID:
+
+Title:
+
+Severity:
+
+Priority:
+
+Description:
+
+Steps:
+
+Expected_Result:
+
+Actual_Result:
+
+Attachments:
